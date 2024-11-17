@@ -1,0 +1,50 @@
+{
+  "name": "github-scraper-sync",
+  "version": "0.0.1",
+  "description": "GitHub portfolio project synchronizer for real-time databases",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshiUtsav/github-scraper.git"
+  },
+  "keywords": [
+    "github",
+    "portfolio",
+    "sync",
+    "database"
+  ],
+  "author": "Utsav joshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshiUtsav/github-scraper/issues"
+  },
+  "homepage": "https://github.com/JoshiUtsav/github-scraper#readme",
+  "dependencies": {
+    "@octokit/rest": "^19.0.13",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "prettier": "^3.1.0",
+    "ts-jest": "^29.1.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
