@@ -1,10 +1,8 @@
-// src/index.ts
+import { Octokit } from "@octokit/rest";
 export { GitHubService } from "./services/github.service";
 export { InstantDBAdapter } from "./adapters/InstantDB.adapter";
 export * from "./types";
 
-// src/index.ts
-import { Octokit } from "@octokit/rest";
 
 async function fetchGithubProjects(username: string, token: string) {
   const octokit = new Octokit({
@@ -15,7 +13,7 @@ async function fetchGithubProjects(username: string, token: string) {
     const { data: repos } = await octokit.repos.listForUser({
       username,
       sort: "updated",
-      per_page: 10, // Limiting to 10 repos for testing
+      per_page: 10, 
     });
 
     const projects = repos.map((repo) => ({
